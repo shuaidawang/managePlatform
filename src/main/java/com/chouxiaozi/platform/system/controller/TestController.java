@@ -1,4 +1,4 @@
-package com.chouxiaozi.ManagePlatform.Controller;
+package com.chouxiaozi.platform.system.controller;
 
 
 import org.slf4j.Logger;
