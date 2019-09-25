@@ -1,6 +1,8 @@
 package com.chouxiaozi.platform.system.controller;
 
 
+import com.chouxiaozi.platform.system.entity.SysUser;
+import com.chouxiaozi.platform.system.service.SysUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,8 @@ import java.sql.SQLException;
 @Controller
 @RestController
 public class TestController {
-
+    @Autowired
+    private SysUserService sysUserService;
     Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @RequestMapping("/hello")
@@ -23,6 +26,12 @@ public class TestController {
         return "hello gouzi";
     }
 
+    @RequestMapping("/get")
+    public SysUser get(String id){
+        Long userId = Long.valueOf(id);
+        SysUser sysUser = sysUserService.get(userId);
+        return sysUser;
+    }
     @Autowired
     private DataSource dataSource;
 

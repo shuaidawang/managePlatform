@@ -7,8 +7,8 @@ logging:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://118.24.157.127:3306/springboot?useUnicode=true&characterEncoding=utf8
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://118.24.157.127:3306/CHOUXIAOZI?useUnicode=true&characterEncoding=utf8
     username: root
     password: root
     initialSize: 1
