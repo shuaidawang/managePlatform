@@ -1,14 +1,20 @@
+
 bootdo:
   uploadPath: c:/var/uploaded_files/
 logging:
   level:
     root: info
-    com.bootdo: debug
+    #mybatis print mysql
+    com:
+      chouxiaozi:
+        platform:
+          system:
+            mapper: debug
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://118.24.157.127:3306/CHOUXIAOZI?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://118.24.157.127:3306/CHOUXIAOZI?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
     initialSize: 1
@@ -49,3 +55,5 @@ spring:
         max-active: 100
         # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-wait: -1
+server:
+  port: 8000

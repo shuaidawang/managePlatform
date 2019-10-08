@@ -40,11 +40,11 @@ public class TestController {
         logger.info("查询姓名");
         logger.error("ggggggggg");
         String name = null;
-        String sql = "select user.name from tab_user user where user.id = 1";
+        String sql = "select user.username from sys_user user where user.id = 1";
         try {
             ResultSet rs = dataSource.getConnection().createStatement().executeQuery(sql);
             if(rs.next()){
-                name = rs.getString("name");
+                name = rs.getString("username");
             }
         } catch (SQLException e) {
             e.printStackTrace();
