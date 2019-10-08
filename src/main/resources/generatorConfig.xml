@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="D:\MavenRepository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar"/>
+
+  <context id="MybatisGenerator" targetRuntime="MyBatis3">
+  	<!-- 指定生成的文件的字符集 -->
+  	<property name="javaFileEncoding" value="UTF-8" />
+  	
+  	<!-- 配置Like查询忽略大小写的插件 -->
+  	<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />  
+  	
+  	<!-- 配置生成Mode实现Serializable接口的插件 -->
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+    
+	<!-- 取消注释 -->
+	<commentGenerator>
+		<property name="suppressDate" value="true" />
+		<property name="suppressAllComments" value="true" />
+	</commentGenerator> 
+        
+     <!-- 配置连接数据信息 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://118.24.157.127:3306/CHOUXIAOZI?useUnicode=true&amp;characterEncoding=utf-8"
+			userId="root"
+			password="root" />
+
+	<!-- 配置自动生成的Model的保存路径与其它参数 -->
+    <javaModelGenerator targetPackage="com.chouxiaozi.platform.system.entity" targetProject="./src/main/java" >
+    	<property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+    <!-- 配置自动生成的Mappper.xml映射的保存路径与其它参数 -->
+    <sqlMapGenerator targetPackage="mybatis.system"  targetProject="./src/main/resources" />
+    
+    <!-- 配置自动生成的Mappper.java接口的保存路径与其它参数 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.chouxiaozi.platform.system.dao" targetProject="./src/main/java" />
+
+	<!-- 生成表对应的操作与实体对象 -->
+ 	<!-- 基本表 -->
+ 	<table schema="" tableName="sys_menu" domainObjectName="SysMenu"
+		enableCountByExample="false" enableUpdateByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+ 	</table>
+  </context>
+</generatorConfiguration>

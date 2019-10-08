@@ -30,3 +30,19 @@ CREATE TABLE `sys_user` (
 -- Records of sys_user
 -- ----------------------------
 INSERT INTO `sys_user` VALUES ('1', 'ws', 'ws');
+
+-- ----------------------------
+-- Table structure for sys_menu
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_menu`;
+CREATE TABLE `sys_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  `url` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of sys_menu
+-- ----------------------------
+INSERT INTO `sys_menu` VALUES ('1', '百度一下', 'http://www.baidu.com');
