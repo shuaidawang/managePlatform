@@ -68,5 +68,9 @@
 			</plugin>
 		</plugins>
 	</build>
+	<modules>
+		<module>swagger</module>
+		<module>mybatis-druid</module>
+	</modules>
 
 </project>
