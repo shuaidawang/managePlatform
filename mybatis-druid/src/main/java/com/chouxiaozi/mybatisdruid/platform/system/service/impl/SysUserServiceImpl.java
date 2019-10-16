@@ -1,8 +1,8 @@
-package com.chouxiaozi.platform.system.service.impl;
+package com.chouxiaozi.mybatisdruid.platform.system.service.impl;
 
-import com.chouxiaozi.platform.system.dao.SysUserMapper;
-import com.chouxiaozi.platform.system.entity.SysUser;
-import com.chouxiaozi.platform.system.service.SysUserService;
+import com.chouxiaozi.mybatisdruid.platform.system.dao.SysUserMapper;
+import com.chouxiaozi.mybatisdruid.platform.system.entity.SysUser;
+import com.chouxiaozi.mybatisdruid.platform.system.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
