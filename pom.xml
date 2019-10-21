@@ -22,6 +22,8 @@
 	<modules>
 		<module>swagger</module>
 		<module>mybatis-druid</module>
+        <module>redis</module>
+		<module>mail</module>
 	</modules>
 
 </project>
