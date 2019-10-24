@@ -3,7 +3,7 @@ spring:
     url: jdbc:mysql://106.54.142.196:3306/shiro?serverTimezone=UTC&characterEncoding=utf8&useSSL=false
     username: root
     password: Ws12345678!
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     data: classpath:data.sql
     initialization-mode: embedded
 
@@ -20,8 +20,11 @@ spring:
 
   thymeleaf:
     cache: false
-    mode: LEGACYHTML5
+    mode: HTML5
     prefix: classpath:/templates/
+    check-template-location: true
     suffix: .html
     encoding: UTF-8
     #content-type: text/html
+    servlet:
+      content-type: text/html
