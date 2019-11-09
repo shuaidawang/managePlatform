@@ -2,17 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>springboot-thymeleaf demo</title>
+    <title>登录</title>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
 </head>
 
-<body>
-    <div><span style="font-size: 16px">用户名</span><input type="text" /></div>
-    <div><span style="font-size: 16px;text-align: right">密码</span><input type="text" /></div>
-    <div><button onclick="btnLogin">登陆</button></div>
-</body>
 <script type="text/javascript">
-    function btnLogin() {
-        alert(111);
+    $(function(){
+        $("#submit").click(function () {
+            login();
+        });
+    });
+
+    function login() {
+        var data = {};
+        data.username = $("#username").val();
+        data.password = $("#password").val();
+        console.info("data",data);
+        $.post("http://localhost/login", data, function(data,status) {
+            console.info("data",data);
+            console.info("status",status);
+        });
     }
 </script>
+<body>
+    <div><span style="font-size: 16px">用户名</span><input type="text" id="username"/></div>
+    <div><span style="font-size: 16px;text-align: right">密码</span><input type="text" id="password"/></div>
+    <div><button id="submit" type="button">登录</button></div>
+</body>
 </html>
