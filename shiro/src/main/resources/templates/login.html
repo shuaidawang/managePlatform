@@ -18,9 +18,23 @@
         data.username = $("#username").val();
         data.password = $("#password").val();
         console.info("data",data);
-        $.post("http://localhost/login", data, function(data,status) {
-            console.info("data",data);
-            console.info("status",status);
+        /*$.post("http://localhost/login", data, function(datas,status) {
+        });*/
+        //window.location.href="/login?username="+data.username+"&password="+data.password;
+        $.ajax({
+            type: "POST",
+            url: "/login",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                window.location.href = "/";
+                /*console.info(json);
+                if (json  == "ok") {
+                    window.location.href = "/index";
+                }else{
+                    alert("登陆失败");
+                }*/
+            }
         });
     }
 </script>
